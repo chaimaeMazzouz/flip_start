@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin: 0;
+  font-size: 8em;
+  font-family: "Luckiest Guy", cursive;
+  padding-bottom: 50px;
+  color: white;
+  text-shadow: 0 0.1em 20px rgb(27, 105, 252),
+    0.05em -0.03em 0 rgb(27, 105, 252), 0.05em 0.005em 0 rgb(27, 105, 252),
+    0em 0.08em 0 rgb(27, 105, 252), 0.05em 0.08em 0 rgb(27, 105, 252),
+    0px -0.03em 0 rgb(27, 105, 252), -0.03em -0.03em 0 rgb(27, 105, 252),
+    -0.03em 0.08em 0 rgb(27, 105, 252), -0.03em 0 0 rgb(27, 105, 252);
+}
+
+.buttons {
+  position: absolute;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 50%;
+  width: 100%;
+}
+
+.button {
+  display: inline-block;
+  padding: 20px 40px;
+  color: white;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  text-decoration: none;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 4vw;
+  border-radius: 0.5em;
+  border-bottom: 0.25em solid #0f5177;
+  transition: all 0.5s;
+  background-color: #3498db;
+}
+.button:hover {
+  background-color: #1e9feb;
+  border-bottom-width: 0;
+  margin-top: 0.2em;
+}
+
+.box-container {
+  position: relative;
+  margin: 10px auto;
+  width: 800px;
+  height: 600px;
+  perspective: 800px;
+}
+.flip-box {
+  width: inherit;
+  height: inherit;
+  backface-visibility: hidden;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.box-container:hover .flip-box {
+  transform: rotateY(180deg);
+}
+.box-online,
+.box-offline {
+  position: absolute;
+  backface-visibility: hidden;
+  width: inherit;
+  height: inherit;
+}
+.box-offline {
+  transform: rotateY(180deg);
+}
+#switch-page {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+.go-offline #switch-page {
+  background-color: #cccccc;
+  font-size: large;
+  border-color: white;
+}
+.go-online #switch-page {
+  background-color: #31b0d5;
+  font-size: large;
+  border-color: #46b8da;
+}
